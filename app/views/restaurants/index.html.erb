@@ -11,6 +11,11 @@
     </tr>
   </thead>
   <tbody>
-  <!-- show restaurants here -->
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= link_to restaurant.website, "http://#{restaurant.website}" %></td>
+      </tr>
+    <% end %>  
   </tbody>
 </table>
