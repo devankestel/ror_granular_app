@@ -11,19 +11,19 @@ JSON.parse(restaurants).each do |restaurant|
   Restaurant.create(name: restaurant['name'], 
                     website: restaurant['website'],
                     low_price: restaurant['price'][0],
-                    high_price: restaurant['price'][1],
-                    hours: restaurant['hours'])
+                    high_price: restaurant['price'][1])
 end
 
 DailySchedule.destroy_all
 restaurants = File.read("#{Rails.root}/restaurants.json")
 JSON.parse(restaurants).each do |restaurant|
-  restaurant[hours].each do |day, values|
+  restaurant['hours'].each do |day, values|
   schedule = DailySchedule.create(day: day,
                     open: day['open'],
                     close: day['closed'])
   assoc_restaurant = Restaurant.find_by(name: restaurant['name'])
   schedule.restaurant << assoc_restaurant
+  end
 end
 
 User.destroy_all

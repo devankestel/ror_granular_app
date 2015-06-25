@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150625041723) do
+ActiveRecord::Schema.define(version: 20150625052534) do
 
   create_table "daily_schedules", force: :cascade do |t|
     t.integer  "restaurant_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20150625041723) do
     t.string   "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text     "hours"
     t.integer  "low_price"
     t.integer  "high_price"
   end
