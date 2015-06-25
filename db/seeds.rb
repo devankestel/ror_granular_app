@@ -18,9 +18,12 @@ end
 DailySchedule.destroy_all
 restaurants = File.read("#{Rails.root}/restaurants.json")
 JSON.parse(restaurants).each do |restaurant|
-  Restaurant.create(day: restaurant['hours'],
-                    open: restaurant['hours'],
-                    close: restaurant['hours'])
+  restaurant[hours].each do |day, values|
+  schedule = DailySchedule.create(day: day,
+                    open: day['open'],
+                    close: day['closed'])
+  assoc_restaurant = Restaurant.find_by(name: restaurant['name'])
+  schedule.restaurant << assoc_restaurant
 end
 
 User.destroy_all
