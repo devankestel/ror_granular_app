@@ -15,6 +15,14 @@ JSON.parse(restaurants).each do |restaurant|
                     hours: restaurant['hours'])
 end
 
+DailySchedule.destroy_all
+restaurants = File.read("#{Rails.root}/restaurants.json")
+JSON.parse(restaurants).each do |restaurant|
+  Restaurant.create(day: restaurant['hours'],
+                    open: restaurant['hours'],
+                    close: restaurant['hours'])
+end
+
 User.destroy_all
 
 password = "swordfish"
