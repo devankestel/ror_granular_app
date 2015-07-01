@@ -17,6 +17,3 @@
 
 // need to use jquery to add in a fadeout for the element 
 
-$( "p" ).click(function() {
-  $( "p" ).fadeOut( "slow" );
-});
