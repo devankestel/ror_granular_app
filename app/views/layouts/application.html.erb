@@ -14,7 +14,7 @@
   <%= user_login_or_logout %>
 <%= yield %>
 <script>
-  $( "p" ).click(function() {
+  $( "p" ).ready(function() {
     $( "p" ).fadeOut(5000);    
   });
 </script>
