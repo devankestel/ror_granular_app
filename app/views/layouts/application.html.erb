@@ -13,6 +13,10 @@
 
   <%= user_login_or_logout %>
 <%= yield %>
-
+<script>
+$( "p" ).click(function() {
+  $( "p" ).fadeOut("slow");
+});
+</script>
 </body>
 </html>

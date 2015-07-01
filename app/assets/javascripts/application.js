@@ -15,4 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
-// need to use jquery to add CSS to flash :new
+// need to use jquery to add in a fadeout for the element 
+
+$( "p" ).click(function() {
+  $( "p" ).fadeOut( "slow" );
+});
