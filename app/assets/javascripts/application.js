@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// need to use jquery to add CSS to flash :new
