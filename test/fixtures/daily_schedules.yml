@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: MyString
+  open: MyString
+  close: MyString
+
+two:
+  day: MyString
+  open: MyString
+  close: MyString

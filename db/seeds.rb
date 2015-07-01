@@ -8,9 +8,11 @@
 Restaurant.destroy_all
 restaurants = File.read("#{Rails.root}/restaurants.json")
 JSON.parse(restaurants).each do |restaurant|
-  Restaurant.create(name: restaurant['name'], 
+  Restaurant.create(name: restaurant['name'],
                     website: restaurant['website'],
                     low_price: restaurant['price'][0],
                     high_price: restaurant['price'][1],
                     hours: restaurant['hours'])
 end
+
+User.create(name: 'Erik', password: 'password')

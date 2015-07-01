@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  root 'restaurants#index'
+
+  get '/login' => 'users#new'
+  post '/login'=> 'users#create'
+  delete '/logout' => 'users#destroy', as: :logout
   resources :restaurants
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

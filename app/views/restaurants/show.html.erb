@@ -1,7 +1,7 @@
 <h1><%= @restaurant.name %></h1>
 
 <h2>Hours</h2>
-<table>
+ <table>
   <thead>
     <tr>
       <th>Day</th>
@@ -10,11 +10,17 @@
     </tr>
   </thead>
   <tbody>
-    <% @restaurant.hours.each do |??| %>
+
+    <% @restaurant.hours.each do |day, hours| %>
+
       <tr>
-        <td><%#=?%></td>
-        <td><%#=?%></td>
-        <td><%#=?%></td>
+        <td><%= day %></td>
+        <td><%= hours["Open"] %></td>
+        <td><%= hours["Closed"] %></td>
       </tr>
+    <% end %>
   </tbody>
 </table>
+
+<%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %>
+<%= link_to "Delete Restaurant", restaurant_path, method: :delete, data: {confirm: "Are you sure?"} %>

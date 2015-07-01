@@ -5,12 +5,22 @@
     <tr>
       <th>Name</th>
       <th>Website</th>
-<!-- beast mode 
+<!-- beast mode
       <th>Today's Hours</th>
     -->
     </tr>
   </thead>
-  <tbody>
-  <!-- show restaurants here -->
-  </tbody>
+
+  <% @restaurants.each do |restaurant| %>
+
+    <tbody>
+        <tr>
+          <td><%= link_to restaurant.name, restaurant %></td>
+          <td><%= restaurant.website %></td>
+        </tr>
+  <% end %>
+    </tbody>
 </table>
+<br>
+<br>
+<%= link_to "Add New Restaurant", new_restaurant_path %>

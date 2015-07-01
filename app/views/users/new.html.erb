@@ -1,0 +1,6 @@
+<h1>Log In Here:</h1>
+<%= form_tag '/login', method: :post do %>
+  <label>User:</label><%= text_field_tag :user %>
+  <label>Password:</label><%= text_field_tag :password %>
+  <%= submit_tag "submit" %>
+<% end %>
