@@ -15,8 +15,16 @@
 //= require turbolinks
 //= require_tree .
 
-var myJS = {
+var myJS = function(){
   $('.notice').fadeOut(5000);
+
+  $( "tr" ).hover(
+    function() {
+      $( this ).css("color", "green");
+    }, function(){
+      $( this ).css("color", "red");
+    }
+  );
   
   $( "#new_restaurant" ).submit(function( event ) { 
     var invalid = false;
@@ -29,16 +37,9 @@ var myJS = {
       alert("form not complete");
       event.preventDefault();
     }
-/* or...
-    if($("input[name*='restaurant']").filter(function(){
-      return $(this).val() != ''
-    }).length){
-      //alert, etc
-    }
-  });
-*/
     
   });
-}
+};
+
 $(myJS);
 $(document).on("page:load", myJS);
