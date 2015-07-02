@@ -17,7 +17,7 @@
 
 var myJS = function(){
   $('.notice').fadeOut(5000);
-
+  $(".button_to").hide();
   $( "tr" ).hover(
     function() {
       $( this ).find(".button_to").show();
