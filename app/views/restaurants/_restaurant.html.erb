@@ -1,4 +1,5 @@
 <tr>
   <td><%= link_to restaurant.name, restaurant %></td>
   <td><%= restaurant.website %></td>
+  <td><%= button_to "Delete Restaurant", restaurant_path(id: restaurant.id), method: :delete %></td>
 </tr>
