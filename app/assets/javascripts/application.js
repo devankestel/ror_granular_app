@@ -20,9 +20,9 @@ var myJS = function(){
 
   $( "tr" ).hover(
     function() {
-      $( this ).css("color", "green");
+      $( this ).find(".button_to").show();
     }, function(){
-      $( this ).css("color", "red");
+      $( this ).find(".button_to").hide();
     }
   );
   
